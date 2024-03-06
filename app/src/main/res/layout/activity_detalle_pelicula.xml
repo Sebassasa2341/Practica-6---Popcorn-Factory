@@ -12,7 +12,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
 
         <ImageView
@@ -23,27 +23,54 @@
 
         <TextView
             android:id="@+id/tv_nombre_pelicula"
-            android:layout_marginTop="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:paddingLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="Halo"
-            android:layout_gravity="center"
+            android:gravity="center"
             android:textColor="@color/yellow"/>
 
         <TextView
             android:id="@+id/tv_pelicula_desc"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="25dp"
+            android:paddingHorizontal="30dp"
             android:textAlignment="center"
             android:textSize="14sp"
             android:text="Aqui descripción de la pelicula"
             android:textColor="@color/yellow" />
 
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/yellow"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="32dp"
+            />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/buyTicket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_button"
+        android:paddingHorizontal="@dimen/paddingButton"
+        android:text="BUY MY TICKETS!" />
+
+    <TextView
+        android:id="@+id/setLeft"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:layout_gravity="center"
+        android:textColor="@color/yellow"/>
 
 </LinearLayout>

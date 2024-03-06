@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,7 +32,6 @@ class catalogo : AppCompatActivity() {
         seriesAdapter = PeliculaAdapter(this, series)
         var gridPelis: GridView = findViewById(R.id.movies_catalogo)
         var gridSeries: GridView = findViewById(R.id.series_catalogo)
-
         gridPelis.adapter = adapter
         gridSeries.adapter = seriesAdapter
 
@@ -40,33 +40,33 @@ class catalogo : AppCompatActivity() {
     fun cargarPeliculas(){
         peliculas.add(Pelicula("Demon Slayer: Kimetsu no Yaiba", R.drawable.demon1, R.drawable.demon, "Demon Slayer: Kimetsu no Yaiba -To the Hashira Training- proyectará por primera vez en cines el " +
                 "episodio 11 del Arco de la Aldea de los Herreros, mostrando así la conclusión de la feroz batalla entre Tanjiro y la Cuarta Luna Creciente, Hatengu, además de cómo Nezuko logra caminar bajo el sol. " +
-                "Le seguirá el episodio 1 del Arco del Entrenamiento de los Pilares, donde veremos el inicio del entrenamiento de los Pilares para prepararse de cara a la próxima batalla contra Muzan Kibutsuji, que se podrá ver por primera vez."))
+                "Le seguirá el episodio 1 del Arco del Entrenamiento de los Pilares, donde veremos el inicio del entrenamiento de los Pilares para prepararse de cara a la próxima batalla contra Muzan Kibutsuji, que se podrá ver por primera vez.", arrayListOf<Cliente>()))
         peliculas.add(Pelicula("Dune 2", R.drawable.dune2, R.drawable.dune3, "\"Duna: Parte Dos\" explorará el viaje mítico de Paul Atreides mientras se une con Chani y los Fremen mientras está en un camino de venganza " +
-                "contra los conspiradores que destruyeron a su familia. Enfrentando una elección entre el amor de su vida y el destino del universo conocido, se esfuerza por evitar un futuro terrible que solo él pueda prever."))
+                "contra los conspiradores que destruyeron a su familia. Enfrentando una elección entre el amor de su vida y el destino del universo conocido, se esfuerza por evitar un futuro terrible que solo él pueda prever.", arrayListOf<Cliente>()))
         peliculas.add(Pelicula("Ghostbusters", R.drawable.ghostbusters, R.drawable.ghostbusters1, "En Ghostbusters Apocalipsis Fantasma, regresa la familia Spengler a donde todo empezó – la icónica estación de bomberos en " +
                 "Nueva York – donde hace equipo junto con los Ghostbusters originales que han desarrollado un laboratorio de investigación ultrasecreto para llevar la cacería de fantasmas al siguiente nivel. Pero cuando el " +
-                "descubrimiento de un artefacto antiguo libera una fuerza maligna, los nuevos y viejos Ghostbusters unen sus fuerzas para proteger su hogar y salvar al mundo de una segunda era de hielo."))
+                "descubrimiento de un artefacto antiguo libera una fuerza maligna, los nuevos y viejos Ghostbusters unen sus fuerzas para proteger su hogar y salvar al mundo de una segunda era de hielo.", arrayListOf<Cliente>()))
         peliculas.add(Pelicula("Freelance", R.drawable.heroeencargo1, R.drawable.heroexencargo2, "Un ex agente de las fuerzas especiales acepta un trabajo para brindar seguridad a una periodista mientras entrevista a un dictador, " +
-                "pero estalla un golpe militar en medio de la entrevista y se ven obligados a escapar a la jungla donde deben sobrevivir."))
+                "pero estalla un golpe militar en medio de la entrevista y se ven obligados a escapar a la jungla donde deben sobrevivir.", arrayListOf<Cliente>()))
         peliculas.add(Pelicula("Madame Web", R.drawable.madame, R.drawable.madameweb1, "“Mientras tanto, en otro universo…” En un cambio del típico género, Madame Web cuenta la historia independiente del origen de una de las heroínas " +
                 "más enigmáticas de la editorial Marvel. El thriller de suspenso protagonizado por Dakota Johnson como Cassandra Webb, una paramédico de Manhattan que puede tener habilidades clarividentes. Forzada a enfrentarse a revelaciones de su pasado, " +
-                "ella forja una relación con tres mujeres jóvenes destinadas a tener poderosos futuros… si pueden sobrevivir a un presente mortal."))
+                "ella forja una relación con tres mujeres jóvenes destinadas a tener poderosos futuros… si pueden sobrevivir a un presente mortal.", arrayListOf<Cliente>()))
         peliculas.add(Pelicula("Vidas Pasadas", R.drawable.vidaspasadas2, R.drawable.vidaspasadas, "Nora y Hae Sung, dos amigos de la infancia profundamente unidos, son separados después de que la familia de Nora " +
-                "emigrara de Corea del Sur. Veinte años después, se reúnen durante una fatídica semana para enfrentarse al amor y al destino."))
+                "emigrara de Corea del Sur. Veinte años después, se reúnen durante una fatídica semana para enfrentarse al amor y al destino.", arrayListOf<Cliente>()))
     }
     fun cargarSeries(){
-        series.add(Pelicula("Avatar: La Leyenda de Aang", R.drawable.ant, R.drawable.ant1, "La leyenda de Aang sigue al último sobreviviente de los Nómadas del Aire, quien deberá restaurar el equilibrio en el " +
-                "mundo entre las tres naciones restantes: la Tribu del Agua, el Reino Tierra y la Nación del Fuego."))
-        series.add(Pelicula("Halo", R.drawable.halos, R.drawable.halo, "Una evacuación mortal cambia la guerra del Jefe Maestro con el Covenant. En Reach, un nuevo régimen toma el mando en FLEETCOM. John siente " +
-                "una amenaza inminente cerca. Estreno de temporada."))
+        series.add(Pelicula("Avatar: La Leyenda de Aang", R.drawable.ant1, R.drawable.ant, "La leyenda de Aang sigue al último sobreviviente de los Nómadas del Aire, quien deberá restaurar el equilibrio en el " +
+                "mundo entre las tres naciones restantes: la Tribu del Agua, el Reino Tierra y la Nación del Fuego.", arrayListOf<Cliente>()))
+        series.add(Pelicula("Halo", R.drawable.halo, R.drawable.halos, "Una evacuación mortal cambia la guerra del Jefe Maestro con el Covenant. En Reach, un nuevo régimen toma el mando en FLEETCOM. John siente " +
+                "una amenaza inminente cerca. Estreno de temporada.", arrayListOf<Cliente>()))
         series.add(Pelicula("Solo Leveling", R.drawable.sololeveling2, R.drawable.sololeveling1, "En un mundo en el que ciertos humanos llamados “cazadores” poseen habilidades mágicas, estos deben luchar contra " +
-                "monstruos para proteger a la raza humana de una aniquilación segura. Un cazador muy débil llamado Sung Jinwoo se encuentra en una lucha en la que solo puede tratar de sobrevivir."))
+                "monstruos para proteger a la raza humana de una aniquilación segura. Un cazador muy débil llamado Sung Jinwoo se encuentra en una lucha en la que solo puede tratar de sobrevivir.", arrayListOf<Cliente>()))
         series.add(Pelicula("Mi Adorable Demonio", R.drawable.adorabledemonios1, R.drawable.adorabledemonio2, "Se centra en la vida de Jung Koo Won, un temerario demonio que pierde sus poderes tras conocer a Do Do-Hee, " +
-                "una exitosa empresaria con la que deberá de colaborar para recuperarlos."))
+                "una exitosa empresaria con la que deberá de colaborar para recuperarlos.", arrayListOf<Cliente>()))
         series.add(Pelicula("El Monstruo de la vieja Seúl", R.drawable.elmonstruovieja1, R.drawable.elmonstruo, "Gyeongseong, 1945. En la oscura era colonial de Seúl, un empresario y una investigadora luchan por sobrevivir y " +
-                "se enfrentan a un monstruo nacido de la avaricia humana."))
+                "se enfrentan a un monstruo nacido de la avaricia humana.", arrayListOf<Cliente>()))
         series.add(Pelicula("The Witcher", R.drawable.thewitchers, R.drawable.thewitcher1, "Geralt de Rivia, un cazador de monstruos mutante, viaja en pos de su destino por un mundo turbulento en el que, a menudo, los humanos son " +
-                "peores que las bestias."))
+                "peores que las bestias.", arrayListOf<Cliente>()))
 
     }
 
@@ -83,30 +83,34 @@ class catalogo : AppCompatActivity() {
             return peliculas.size
         }
 
-        override fun getItem(p0: Int): Any {
-            return peliculas[p0]
+        override fun getItem(position: Int): Any {
+            return peliculas[position]
         }
 
-        override fun getItemId(p0: Int): Long {
-            return p0.toLong()
+        override fun getItemId(position: Int): Long {
+            return position.toLong()
         }
 
-        override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-            var pelicula = peliculas[p0]
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+            var pelicula = peliculas[position]
             var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             var vista = inflator.inflate(R.layout.peliculas, null)
             var image: ImageView = vista.findViewById(R.id.image_movie_cell)
             var tittle: TextView = vista.findViewById(R.id.movie_tittle_cell)
 
             image.setImageResource(pelicula.image)
-            tittle.setText(pelicula.titulo)
+            tittle.setText(pelicula.nombre)
 
-            image.setOnClickListener(){
+            image.setOnClickListener{
+
                 val intento = Intent(context, detalle_pelicula::class.java)
-                intento.putExtra("titulo", pelicula.titulo)
+                var seatsAvailable = 20 - pelicula.seats.size
+                intento.putExtra("titulo", pelicula.nombre)
                 intento.putExtra("imagen", pelicula.image)
                 intento.putExtra("header", pelicula.header)
                 intento.putExtra("sinopsis", pelicula.sinopsis)
+                intento.putExtra("numberSeats", (seatsAvailable))
+                intento.putExtra("pos", position)
                 context!!.startActivity(intento)
             }
             return vista
